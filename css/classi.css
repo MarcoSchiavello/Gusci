@@ -332,7 +332,16 @@ hr
 	position: absolute;
     top: 425px;
 	left: 65%;
-}                                                                                                                                  
+}      
+.lente
+{
+	height: 10px;
+	width: 50px;
+	border:solid 1px black;
+	position: absolute;
+	top:20px;
+	right:40px;
+}                                                                                                                            
 @media only screen and (max-width: 1560px)
 {
 	.card
