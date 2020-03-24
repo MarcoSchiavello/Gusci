@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "C:/Users/marco/Desktop/programmazione/sito/sito.html",
+            "url": "C:/Users/marco/Desktop/progetti/sito-gusci/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

@@ -137,7 +137,7 @@ body
 
 
 }
-.dati:hover
+.dati:focus
 {
 	width: 220px;
 	transition: width 1s;
