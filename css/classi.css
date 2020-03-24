@@ -319,6 +319,21 @@ hr
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+.avviso1
+{
+	color: red;
+	position: absolute;
+	top: 365px;
+	left: 65%;
+}
+.avviso2
+{
+	color: red;
+	position: absolute;
+    top: 425px;
+	left: 65%;
+}
+}                                                                                                                                         
 @media only screen and (max-width: 1560px)
 {
 	.card
