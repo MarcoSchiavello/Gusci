@@ -60,3 +60,24 @@ function salutaUtente(nome,cognome)
     hide.style.display="block";
     hide2.style.display="block";
 }
+function trova_art() 
+{
+    var input,caps,lista_card,el_lista,nome,cont_nome; 
+    input = document.getElementById("lente");
+    caps = input.value.toUpperCase();
+    lista_card = document.getElementById("lista");
+    el_lista = lista_card.getElementsByTagName("li");
+    for ( i = 0; i < el_lista.length; i++) 
+    {
+        nome = el_lista[i].getElementsByTagName("h1")[0];
+        cont_nome= nome.textContent || nome.innerText;
+        if (cont_nome.toUpperCase().indexOf(caps) > -1) 
+        {
+            el_lista[i].style.display = "";
+        } 
+        else 
+        {
+            el_lista[i].style.display = "none";
+        }
+    }
+}

@@ -294,14 +294,20 @@ hr
 	margin-bottom: 5px;
 
 }
-.card
+.cardList
 {
 	display: flex;
-	position: relative;
 	flex-direction: row;
+	flex-flow: wrap;
+	margin-left: auto;
+	margin-right: auto;
+	list-style-type: none;
+}
+.card
+{
+	position: relative;
 	top: 50%;
 	width: 1450px;
-	flex-flow: wrap;
 	margin-left: auto;
 	margin-right: auto;
 }
