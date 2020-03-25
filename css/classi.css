@@ -58,7 +58,7 @@ h2
 	font-size: 17px;
 	font-family: Circularstd, sans-serif;
 	font-style: none;
-	border: solid;
+	border: solid 2px;
 	border-color:blue;
 	border-radius: 12px;
 }
@@ -89,7 +89,7 @@ h2
 	font-size: 17px;
 	font-family: Circularstd, sans-serif;
 	font-style: none;
-	border: solid;
+	border: solid 2px;
 	border-color:blue;
 	border-radius: 10px;
 	float: left;
