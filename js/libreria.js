@@ -32,10 +32,19 @@ function contr_lung()
         allert.style.display="block";
 
     }
+    else
+    {
+        allert.style.display="none";
+    }
     if(cognome.length>10)
     {
         allert2.style.display="block";
     }
+    else
+    {
+        allert2.style.display="none";
+    }
+    
 }
 
 function primLetMaglNome()
@@ -56,7 +65,7 @@ function salutaUtente(nome,cognome)
 {
     modal.style.display="none";
     btn.style.display="none";
-    hide.innerHTML="Benvenuto, <br>"+nome+" "+cognome;
+    hide.innerHTML="Benvenuto,<br>"+nome+" "+cognome;
     hide.style.display="block";
     hide2.style.display="block";
 }

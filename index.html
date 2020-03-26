@@ -12,20 +12,21 @@
 
     <header class="nav">
         <a href="carrello.html">
-            <img src="img/carrello.png" alt="" style="width: 35px;
-                                                    height: 35px;
-                                                    position: absolute;
-                                                    top: 30px;
-                                                    right: 9%;">
+            <img src="img/carrello.png" id="carrello"alt="" style="width: 35px;
+                                                                height: 35px;
+                                                                position: absolute;
+                                                                top: 30px;
+                                                                right: 150px;">
         </a>
 
-        <div style="position:absolute;top: 20px;right:1%;">
+        <div style="position:absolute;top: 20px;right:30px;">
             <button class="bottoni"id="btn" >
                 <h2 style="font-size: 18px;">
                     Login
                 </h2>        
              </button>
-             <h2 class="hide" id="hide">
+             <h2 class="hide" id="hide" style="font-size: 15px;
+                                               width: 150px;">
                   benvenuto
              </h2>
             
@@ -225,11 +226,16 @@
                               font-size: 50px;
                               font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
                               GUSCI LOGIN </h1>
-                              <input type="text" class="dati" style="margin-bottom: 20px;" id="nome" placeholder="Nome"><h6 class="hide" id="allert">troppo lungha</h6><br>
+                    <input type="text" class="dati" style="margin-bottom: 20px;" onkeypress="contr_lung()" id="nome" placeholder="Nome">
+                </center>
+                <h6 class="hide allert" id="allert">troppo lungha</h6><br>
 
-
-                            <input type="text"  class="dati" style="margin-bottom: 20px;" id="cognome"   placeholder="Cognome"><h6 class="hide" id="allert2">troppo lungha</h6><br>
-                    <h6 style="font-size: 15px">      
+                <center>
+                    <input type="text"  class="dati" style="margin-bottom: 20px;" onkeypress="contr_lung()" id="cognome"   placeholder="Cognome">
+                </center>
+                    <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
+                <center>
+                    <h6 style="font-size: 15px">     
                         <input type="checkbox" >     
                         Ricorda Dati  
                     </h6><br>
@@ -265,8 +271,6 @@
             
             $("#nome").blur(primLetMaglNome);
             $("#cognome").blur(primLetMaglCogn);
-            $("#cognome").blur(contr_lung);
-            $("#nome").blur(contr_lung);
             $("#cognome").focus(reset_cogn);
             $("#nome").focus(reset_nom);
 
@@ -297,8 +301,32 @@
                 }
                 else
                 {
-                    salutaUtente(nome,cognome);
+                    if(nome.length<=0||cognome.length<=0)
+                    {
+                        if(nome.length<=0)
+                        {
+                            allert.innerHTML="troppo corta";
+                            allert.style.display="block";
+                        }
+                        if(cognome.length<=0)
+                        {
+                            allert2.innerHTML="troppo corta";
+                            allert2.style.display="block";
+                        }
+                    }
+                    else
+                    {
+                            allert2.style.display="none";
+                            salutaUtente(nome,cognome);
+                            document.getElementById("carrello").style.right="30px";
+                            hide.style.position="absolute";
+                            hide.style.right="60px";
+                            hide.style.top="10px";
+                    }
                 }
+
+               
+
             }
            
             hide2.onclick=function()

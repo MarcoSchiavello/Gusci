@@ -368,7 +368,14 @@ hr
 {
 
 }
-
+.allert
+{
+	position: relative;
+	top: -50px;
+	height: 0;
+	float: right;
+	color: red;
+}
 @media only screen and (max-width: 1560px)
 {
 	.card
