@@ -29,8 +29,8 @@ function contr_lung()
 
     if(nome.length>10)
     {
+        allert.innerHTML="troppo lungha";
         allert.style.display="block";
-
     }
     else
     {
@@ -38,6 +38,7 @@ function contr_lung()
     }
     if(cognome.length>10)
     {
+        allert.innerHTML="troppo lungha";
         allert2.style.display="block";
     }
     else
