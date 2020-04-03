@@ -376,6 +376,15 @@ hr
 	float: right;
 	color: red;
 }
+.carrello
+{
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: 30px;
+	right: 150px;
+	display: none;
+}                                                               
 @media only screen and (max-width: 1560px)
 {
 	.card

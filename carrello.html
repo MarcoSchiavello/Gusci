@@ -77,6 +77,131 @@
             </h2>
         </button>
     </div>
+    <div id="login" class="modal">
+        <div class="con_modal" > 
+            <span class="close">&times;</span>
+            <center>
+                <img src="img/logo_sito.png" style="height: 125px;width: 125px;">
+                <h1 style="padding-bottom: 40px;
+                          font-size: 50px;
+                          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                          GUSCI LOGIN </h1>
+                <input type="text" class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="nome" placeholder="Nome">
+            </center>
+            <h6 class="hide allert" id="allert">troppo lungha</h6><br>
+
+            <center>
+                <input type="text"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="cognome"   placeholder="Cognome">
+            </center>
+                <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
+            <center>
+                <h6 style="font-size: 15px">     
+                    <input type="checkbox" >     
+                    Ricorda Dati  
+                </h6><br>
+
+                <button class="bottoni" id="btn2"  style="padding: 13px 33px 13px 33px;
+                                                          margin-top: 25px;
+                                                          margin-bottom: 20px;
+                                                          font-size: 15px;">
+                    <h2>
+                        login
+                    </h2>
+                </button>
+                <h6 class="hide" style="color: red;" id="allert3">completa i campi seguendo le indicazioni</h6>
+
+            </center>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/libreria.js"></script>
+    <script>
+        var modal=document.getElementById("login");
+        var btn=document.getElementById("btn");
+        var close=document.getElementsByClassName("close")[0];
+        var hide=document.getElementById("hide");
+        var hide2=document.getElementById("hide2");
+        var allert=document.getElementById("allert");
+        var allert2=document.getElementById("allert2");
+        var allert3=document.getElementById("allert3");
+        var tre_menu=document.getElementById("tre_menu");
+        $(function ()
+        {
+            
+            $("#nome").blur(primLetMaglNome);
+            $("#cognome").blur(primLetMaglCogn);
+            $("#cognome").focus(reset_cogn);
+            $("#nome").focus(reset_nom);
+
+            btn.onclick=function()
+            {
+                modal.style.display="block";
+            }
+            tre_menu.onclick=function()
+            {
+
+            }
+            close.onclick=function()
+            {
+                modal.style.display="none";
+                $("#nome").val("");
+                $("#cognome").val("");
+                allert.style.display="none";
+                allert2.style.display="none";
+                allert3.style.display="none";
+            }
+            btn2.onclick=function()
+            {
+                var nome=String($("#nome").val());
+                var cognome=String($("#cognome").val());
+                if(nome.length>10||cognome.length>10)
+                {
+                    allert3.style.display="block";
+                }
+                else
+                {
+                    if(nome.length<=0||cognome.length<=0)
+                    {
+                        if(nome.length<=0)
+                        {
+                            allert.innerHTML="troppo corta";
+                            allert.style.display="block";
+                        }
+                        if(cognome.length<=0)
+                        {
+                            allert2.innerHTML="troppo corta";
+                            allert2.style.display="block";
+                        }
+                    }
+                    else
+                    {
+                            allert2.style.display="none";
+                            salutaUtente(nome,cognome);
+                            document.getElementById("carrello").style.right="30px";
+                            hide.style.position="absolute";
+                            hide.style.right="60px";
+                            hide.style.top="10px";
+                    }
+                }
+
+            
+
+            }
+        
+            hide2.onclick=function()
+            {
+                    $("#nome").val("");
+                    $("#cognome").val("");
+                    btn.style.display="block";
+                    hide.style.display="none";
+                    hide2.style.display="none";
+            }
+
+        }
+        )
+    </script>
 
     
 </body>

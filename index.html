@@ -11,13 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 
     <header class="nav">
-        <a href="carrello.html">
-            <img src="img/carrello.png" id="carrello"alt="" style="width: 35px;
-                                                                height: 35px;
-                                                                position: absolute;
-                                                                top: 30px;
-                                                                right: 150px;">
-        </a>
+
+            <img src="img/carrello.png" id="carrello" class="carrello">
 
         <div style="position:absolute;top: 20px;right:30px;">
             <button class="bottoni"id="btn" >
@@ -218,7 +213,7 @@
     </div>
         
         <div id="login" class="modal">
-             <div class="con_modal" > 
+            <div class="con_modal" > 
                 <span class="close">&times;</span>
                 <center>
                     <img src="img/logo_sito.png" style="height: 125px;width: 125px;">
@@ -253,6 +248,7 @@
                 </center>
             </div>
         </div>
+    
  
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/libreria.js"></script>
@@ -266,6 +262,7 @@
         var allert2=document.getElementById("allert2");
         var allert3=document.getElementById("allert3");
         var tre_menu=document.getElementById("tre_menu");
+        var carrello=document.getElementById("carrello");
         $(function ()
         {
             
@@ -295,6 +292,7 @@
             {
                 var nome=String($("#nome").val());
                 var cognome=String($("#cognome").val());
+                var servizi=0;
                 if(nome.length>10||cognome.length>10)
                 {
                     allert3.style.display="block";
@@ -322,6 +320,7 @@
                             hide.style.position="absolute";
                             hide.style.right="60px";
                             hide.style.top="10px";
+                            carrello.style.display="block";
                     }
                 }
 

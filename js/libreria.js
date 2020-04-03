@@ -91,3 +91,12 @@ function trova_art()
         }
     }
 }
+function servizio()
+{
+    var carrelo_funz=document.createElement('a');
+    carrello.href="carrello.html";
+    var car_img=document.createElement('img');
+    car_img.setAttribute("src", "img/carrello.png");
+    car_img.className="carrello";
+    carrelo_funz.appendChild(car_img);
+}
