@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 
     <header class="nav">
-
-            <img src="img/carrello.png" id="carrello" class="carrello">
+            <a href="carrello.html">
+                <img src="img/carrello.png" id="carrello" class="carrello">
+            </a>
 
         <div style="position:absolute;top: 20px;right:30px;">
             <button class="bottoni"id="btn" >
@@ -42,7 +43,7 @@
         
         </div>
         <a href="index.html">
-            <img src="img/logo_sito.png" alt="" class="img">
+            <img src="img/logo_sito.png" alt="" class="img_logo">
         </a>
         <center>
             <a href="" style="position: absolute;top:27px;" id="tre_menu">
@@ -213,7 +214,7 @@
     </div>
         
         <div id="login" class="modal">
-            <div class="con_modal" > 
+            <div id="con_login" class="con_modal" > 
                 <span class="close">&times;</span>
                 <center>
                     <img src="img/logo_sito.png" style="height: 125px;width: 125px;">
@@ -243,6 +244,51 @@
                             login
                         </h2>
                     </button>
+                    <h5 id="sign_up">sign up</h5>
+                    <h6 class="hide" style="color: red;" id="allert3">completa i campi seguendo le indicazioni</h6>
+
+                </center>
+            </div>
+            <div id="con_sign_up" class="con_modal_sign_in" > 
+                <span class="close">&times;</span>
+                <center>
+                    <img src="img/logo_sito.png" style="height: 125px;width: 125px;">
+                    <h1 style="padding-bottom: 40px;
+                              font-size: 50px;
+                              font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                              GUSCI REGISTRAZIONE </h1>
+                    <input type="text" class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="nome" placeholder="Nome">
+                </center>
+                <h6 class="hide allert" id="allert">troppo lungha</h6><br>
+
+                <center>
+                    <input type="text"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="cognome"   placeholder="Cognome">
+                </center>
+                <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
+                <center>
+                    <input type="text"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="mail"   placeholder="Mail">
+                </center>
+                <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
+                <center>
+                    <input type="password"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="pass"   placeholder="Password">
+                </center>
+                <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
+                
+
+                <center>
+                    <h6 style="font-size: 15px">     
+                        <input type="checkbox" >     
+                        Ricorda Dati  
+                    </h6><br>
+
+                    <button class="bottoni" id="btn2"  style="padding: 13px 33px 13px 33px;
+                                                              margin-top: 25px;
+                                                              margin-bottom: 20px;
+                                                              font-size: 15px;">
+                        <h2>
+                            login
+                        </h2>
+                    </button>
                     <h6 class="hide" style="color: red;" id="allert3">completa i campi seguendo le indicazioni</h6>
 
                 </center>
@@ -256,13 +302,14 @@
         var modal=document.getElementById("login");
         var btn=document.getElementById("btn");
         var close=document.getElementsByClassName("close")[0];
-        var hide=document.getElementById("hide");
         var hide2=document.getElementById("hide2");
         var allert=document.getElementById("allert");
         var allert2=document.getElementById("allert2");
         var allert3=document.getElementById("allert3");
         var tre_menu=document.getElementById("tre_menu");
         var carrello=document.getElementById("carrello");
+        var pass=document.getElementById("pass");
+        var mail=document.getElementById("mail");
         $(function ()
         {
             
@@ -274,12 +321,23 @@
             btn.onclick=function()
             {
                 modal.style.display="block";
+                document.getElementById("con_login").style.display="block";
+                document.getElementById("con_sign_up").style.display="none";
             }
             tre_menu.onclick=function()
             {
 
             }
             close.onclick=function()
+            {
+                modal.style.display="none";
+                $("#nome").val("");
+                $("#cognome").val("");
+                allert.style.display="none";
+                allert2.style.display="none";
+                allert3.style.display="none";
+            }
+            document.getElementsByClassName("close")[1].onclick=function()
             {
                 modal.style.display="none";
                 $("#nome").val("");
@@ -311,6 +369,16 @@
                             allert2.innerHTML="troppo corta";
                             allert2.style.display="block";
                         }
+                        if(pass.length<=0)
+                        {
+                            allert3.innerHTML="troppo corta";
+                            allert3.style.display="block";
+                        }
+                        if(pass.length<=0)
+                        {
+                            allert4.innerHTML="troppo corta";
+                            allert4.style.display="block";
+                        }
                     }
                     else
                     {
@@ -335,6 +403,13 @@
                     btn.style.display="block";
                     hide.style.display="none";
                     hide2.style.display="none";
+            }
+            document.getElementById("sign_up").onclick=function()
+            {
+                document.getElementById("con_login").style.display="none";
+                document.getElementById("con_sign_up").style.display="block";
+                document.getElementById("sign_up").style.display="none";
+
             }
 
             
