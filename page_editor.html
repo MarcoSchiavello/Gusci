@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/classi.css">
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 
-    <header class="nav">
+    <header class="nav_page_editor">
         <a href="">
             <img src="img/carrello.png" alt="" style="width: 35px;
                                                     height: 35px;
@@ -53,6 +53,29 @@
             </a>
         </center>
     </header>
+
+    <h1 class="titolo_page_creator">CREAZIONE BANNER</h1>
+    <div id="info_prodotto" class="info_prodotto">
+        <input type="file" style="display: none" id="file">
+        <button class="dati_file" id="fake_file">
+            scegli immagine prodotto 
+        </button>
+        <div style="display: flex;
+                    flex-direction: column;
+                    margin-left: 50px;">
+            <input type="text" class="dati_prodotto" placeholder="titolo">
+            <input type="text" class="dati_prodotto" placeholder="desscrizione" style="height: 150px;">
+            <input type="number" class="dati_prodotto" placeholder="prezzo" style="margin-bottom: 0;">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("fake_file").onclick=function()
+        {
+            document.getElementById("file").click();
+        }
+    </script>
+
 
     
 

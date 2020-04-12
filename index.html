@@ -82,7 +82,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                Maglia Gusci
+                                Maglia 
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -98,7 +98,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                Scarpa Gusci
+                                Scarpa
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -115,7 +115,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                Tazza Gusci
+                                Tazza 
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -132,7 +132,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                Cappello Gusci
+                                Cappello 
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -150,7 +150,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                Berretto Gusci
+                                Berretto
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -167,7 +167,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                Cintura Gusci
+                                Cintura
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -184,7 +184,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                San Pei Gusci
+                                San Pei 
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -201,7 +201,7 @@
                         </a>
                         <div>
                             <h1 class="text_banner">
-                                Felpa Gusci
+                                Felpa 
                             </h1><br>
                             <h3 class="text_banner">
                                 200 &#x20ac
@@ -257,36 +257,34 @@
                               font-size: 50px;
                               font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
                               GUSCI REGISTRAZIONE </h1>
-                    <input type="text" class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="nome" placeholder="Nome">
+                    <input type="text" class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung_sign()" id="sign_nome" placeholder="Nome">
                 </center>
                 <h6 class="hide allert" id="allert">troppo lungha</h6><br>
 
                 <center>
-                    <input type="text"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="cognome"   placeholder="Cognome">
+                    <input type="text"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung_sign()" id="sign_cognome"   placeholder="Cognome">
                 </center>
                 <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
                 <center>
-                    <input type="text"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="mail"   placeholder="Mail">
+                    <input type="text"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung_sign()" id="mail"   placeholder="Mail">
                 </center>
-                <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
+                <h6 class="hide allert" id="allert3">troppo lungha</h6><br>
                 <center>
-                    <input type="password"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung()" id="pass"   placeholder="Password">
+                    <input type="password"  class="dati" style="margin-bottom: 20px;" onkeyup="contr_lung_sign()" id="pass"   placeholder="Password">
                 </center>
-                <h6 class="hide allert" id="allert2">troppo lungha</h6><br>
-                
-
+                <h6 class="hide allert" id="allert5">troppo lungha</h6><br>
                 <center>
                     <h6 style="font-size: 15px">     
                         <input type="checkbox" >     
                         Ricorda Dati  
                     </h6><br>
 
-                    <button class="bottoni" id="btn2"  style="padding: 13px 33px 13px 33px;
-                                                              margin-top: 25px;
-                                                              margin-bottom: 20px;
-                                                              font-size: 15px;">
+                    <button class="bottoni" id="btn2_sign" onclick="after_sign_up(sign_nome,sign_cognome)"  style="padding: 13px 33px 13px 33px;
+                                                                                                                    margin-top: 25px;
+                                                                                                                    margin-bottom: 20px;
+                                                                                                                    font-size: 15px;">
                         <h2>
-                            login
+                            sign up
                         </h2>
                     </button>
                     <h6 class="hide" style="color: red;" id="allert3">completa i campi seguendo le indicazioni</h6>
@@ -310,6 +308,8 @@
         var carrello=document.getElementById("carrello");
         var pass=document.getElementById("pass");
         var mail=document.getElementById("mail");
+        
+
         $(function ()
         {
             
@@ -323,6 +323,8 @@
                 modal.style.display="block";
                 document.getElementById("con_login").style.display="block";
                 document.getElementById("con_sign_up").style.display="none";
+                document.getElementById("sign_up").style.display="block";
+
             }
             tre_menu.onclick=function()
             {
@@ -383,12 +385,7 @@
                     else
                     {
                             allert2.style.display="none";
-                            salutaUtente(nome,cognome);
-                            document.getElementById("carrello").style.right="30px";
-                            hide.style.position="absolute";
-                            hide.style.right="60px";
-                            hide.style.top="10px";
-                            carrello.style.display="block";
+                            after_login(nome,cognome);
                     }
                 }
 

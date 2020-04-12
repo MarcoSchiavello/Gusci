@@ -55,6 +55,18 @@ body
 	display: inline-block;
 	height: 75px;
 }
+.nav_page_editor
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	background-color: white;
+	box-shadow :0px 5px 12px -5px  blue;
+	display: block;
+	z-index: 999;
+	display: inline-block;
+	height: 75px;
+}
 .menu li
 {
 	float: left;
@@ -191,7 +203,7 @@ body
 {
 	color: #aaaaaa;
 	float: right;
-	font-size: 28px;
+	font-size: 45px;
 	font-weight: bold;
 }
   
@@ -389,9 +401,49 @@ body
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+/*--------PAGE_EDITOR----------*/ 
+.dati_file
+{
+	width: 300px;
+	height:;
+	background-color: white;
+	color: blue;
+	font-size: 20px;
+	font-family: Circularstd, sans-serif;
+	font-style: none;
+	border: solid 2px;
+	border-color: black;
+	border-radius: 12px;
 
-
-                                                    
+}
+.titolo_page_creator
+{
+	margin-top: 20px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+}
+.info_prodotto
+{
+	height: fit-content;
+	width: fit-content;
+	margin: auto;
+	display: flex;
+}
+.dati_prodotto
+{
+	border: solid black 2px;
+	border-radius: 7px;
+	padding: 5px;
+	width: 300px;
+	margin-bottom: 50px;
+}
+.dati_prodotto::placeholder
+{
+	color: blue;
+}  
+/*--------MEDIA----------*/                                            
 @media only screen and (max-width: 1560px)
 {
 	.card

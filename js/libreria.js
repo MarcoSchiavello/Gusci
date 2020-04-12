@@ -65,10 +65,20 @@ function primLetMaglCogn()
 function salutaUtente(nome,cognome)
 {
     modal.style.display="none";
+    modal.style.display="none";
     btn.style.display="none";
     hide.innerHTML="Benvenuto,<br>"+nome+" "+cognome;
     hide.style.display="block";
     hide2.style.display="block";
+}
+function after_login(nome,cognome)
+{
+    salutaUtente(nome,cognome);
+    document.getElementById("carrello").style.right="30px";
+    hide.style.position="absolute";
+    hide.style.right="60px";
+    hide.style.top="10px";
+    carrello.style.display="block";
 }
 function trova_art() 
 {
@@ -99,4 +109,48 @@ function servizio()
     car_img.setAttribute("src", "img/carrello.png");
     car_img.className="carrello";
     carrelo_funz.appendChild(car_img);
+}
+function contr_lung_sign()
+{
+    let nome=$("#sign_nome").val();
+    let cognome=$("#sign_cognome").val();
+
+    if(nome.length>10)
+    {
+        allert.innerHTML="troppo lungha";
+        allert.style.display="block";
+    }
+    else
+    {
+        allert.style.display="none";
+    }
+    if(cognome.length>10)
+    {
+        allert.innerHTML="troppo lungha";
+        allert2.style.display="block";
+    }
+    else
+    {
+        allert2.style.display="none";
+    }
+}
+function salutaNuovoUtente(sign_nome,sign_cognome)
+{
+    var sign_nome=String($("#sign_nome").val());
+    var sign_cognome=String($("#sign_cognome").val());
+    modal.style.display="none";
+    modal.style.display="none";
+    btn.style.display="none";
+    hide.innerHTML="Benvenuto,<br>"+sign_nome+" "+sign_cognome;
+    hide.style.display="block";
+    hide2.style.display="block";
+}
+function after_sign_up(sign_nome,sign_cognome)
+{
+    salutaNuovoUtente(sign_nome,sign_cognome);
+    document.getElementById("carrello").style.right="30px";
+    hide.style.position="absolute";
+    hide.style.right="60px";
+    hide.style.top="10px";
+    carrello.style.display="block";
 }
