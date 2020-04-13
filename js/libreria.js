@@ -154,3 +154,20 @@ function after_sign_up(sign_nome,sign_cognome)
     hide.style.top="10px";
     carrello.style.display="block";
 }
+function pre_img(input) 
+{
+    
+    if (input.files && input.files[0]) 
+    {
+       
+        
+        var reader = new FileReader();
+      
+        reader.onload = function(e) 
+        {
+          $('#pre_img').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+}

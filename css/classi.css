@@ -42,6 +42,15 @@ body
 {
 	display: none;
 }  
+textarea::placeholder
+{
+	font-family: Circularstd, sans-serif ;
+}
+textarea
+{
+	font-family: Circularstd, sans-serif ;
+	font-size: 15px;
+}
 /*-------NAV-BAR-----------*/
 .nav
 {
@@ -405,16 +414,15 @@ body
 .dati_file
 {
 	width: 300px;
-	height:;
 	background-color: white;
-	color: blue;
+	color: rgba(0,0,255,0.5);
 	font-size: 20px;
 	font-family: Circularstd, sans-serif;
 	font-style: none;
 	border: solid 2px;
 	border-color: black;
 	border-radius: 12px;
-
+	
 }
 .titolo_page_creator
 {
@@ -422,7 +430,7 @@ body
 	display: block;
 	width: 100%;
 	text-align: center;
-	margin-bottom: 15px;
+	margin-bottom: 10%;
 }
 .info_prodotto
 {
@@ -438,11 +446,18 @@ body
 	padding: 5px;
 	width: 300px;
 	margin-bottom: 50px;
+	
+
 }
 .dati_prodotto::placeholder
 {
 	color: blue;
+	opacity: 0.5;
 }  
+.prezzo::placeholder
+{
+	font-size: 15px;
+}
 /*--------MEDIA----------*/                                            
 @media only screen and (max-width: 1560px)
 {

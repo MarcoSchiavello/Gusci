@@ -37,32 +37,53 @@
             </a>
         </center>
     </header>
-
-    <h1 class="titolo_page_creator">CREAZIONE BANNER</h1>
-    <div id="info_prodotto" class="info_prodotto">
-        <input type="file" style="display: none" id="file">
-        <button class="dati_file" id="fake_file">
-            scegli immagine prodotto 
-        </button>
-        <div style="display: flex;
-                    flex-direction: column;
-                    margin-left: 50px;">
-            <input type="text" class="dati_prodotto" placeholder="titolo">
-            <input type="text" class="dati_prodotto" placeholder="desscrizione" style="height: 150px;">
-            <input type="number" class="dati_prodotto" placeholder="prezzo" style="margin-bottom: 0;">
+    <div style="display: flex;flex-direction: column;">
+        <h1 class="titolo_page_creator">CREAZIONE BANNER</h1>
+        <div id="info_prodotto" class="info_prodotto">
+            <input type="file" style="display: none" id="file">
+            <button class="dati_file" id="fake_file">
+                <img id="pre_img" style="max-width: 290px;max-height: 290px;">
+                <p id="sele" style="display: block;">scegli immagine prodotto</p>
+            </button>
+            <div style="display: flex;
+                        flex-direction: column;
+                        margin-left: 50px;">
+                <input type="text" class="dati_prodotto" placeholder="titolo" style="font-size: 25px;">
+                <textarea class="dati_prodotto" placeholder="desscrizione" style="height: 150px; resize: none;"></textarea>
+                <div style="display: flex;"> 
+                    <input type="number" class="dati_prodotto prezzo" placeholder="prezzo" style="margin-bottom: 0;
+                                                                                                  width: 60px;
+                                                                                                font-size: 20px;"> <h2 style="font-size: 27px;
+                                                                                                                              margin-top: 3px;
+                                                                                                                              margin-left: 10px;">
+                                                                                                                        &#x20ac
+                                                                                                                    </h2>
+                </div>
+            </div>
         </div>
+        <button class="bottoni" style="margin: auto;margin-top: 6%;">
+            <h2>
+                Crea
+            </h2>
+        </button>
     </div>
-
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/libreria.js"></script>
+    <script type="text/javascript" src="js/codice.js"></script>
     <script>
         document.getElementById("fake_file").onclick=function()
         {
             document.getElementById("file").click();
         }
+        $("#file").change(function() 
+        {
+            document.getElementById("sele").style.display="none";
+            pre_img(this);
+            
+            
+        });
+
     </script>
-
-
-    
-
-    
+ 
 </body>
 </html>
