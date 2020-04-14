@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="css/classi.css">
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 
+    <div id="login_cms" class="login_cms">
+        <div id="login_cms_form" class="login_cms_form">
+            <img src="img/logo_cms.png" alt=""  style="height: 75px;
+                                                        width: 190px;
+                                                        margin: auto;
+                                                        margin-bottom: 30px;">                                                                  
+            <h1 style="text-align:center;" class="space">LOGIN</h1>
+            <input type="text" placeholder="Nome" id="nome_cms" class="dati_cms space">
+            <input type="password" class="dati_cms space" id="pass_cms" placeholder="Password">
+            <button class="bottoni space" id="btn_cms" onclick="contr_cms()" style="width: fit-content; 
+                                                                                    margin: auto;
+                                                                                    margin-bottom: 20px;">
+                Login
+            </button>
+            <h6 class="hide allert_cms" id="cms_alt">nome o password sbagliato</h6>
+        </div>
+    </div>
+
     <header class="nav_page_editor">
     
         <div style="display: block;
@@ -26,9 +44,9 @@
             </ul>
         
         </div>
-        <a href="index.html">
-            <img src="img/logo_sito.png" alt="" class="img_logo">
-        </a>
+
+            <img src="img/logo_cms.png" alt="" class="img_logo_cms">
+
         <center>
             <a href="" style="position: absolute;top:27px;" id="tre_menu">
                 <span class="tre"></span>
@@ -78,11 +96,8 @@
         $("#file").change(function() 
         {
             document.getElementById("sele").style.display="none";
-            pre_img(this);
-            
-            
+            pre_img(this); 
         });
-
     </script>
  
 </body>

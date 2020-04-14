@@ -171,3 +171,26 @@ function pre_img(input)
         reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
 }
+function contr_cms()
+{
+    var nome_cms=document.getElementById("nome_cms").value;
+    var pass_cms=document.getElementById("pass_cms").value;
+    if(nome_cms=="admin" && pass_cms=="admin" )
+    {
+        document.getElementById("login_cms").style.display="none";
+    } 
+    else
+    {
+        if(nome_cms.length<=0 || pass_cms.length<=0)
+        {
+            document.getElementById("cms_alt").innerHTML="inserire tutti i campi";
+            document.getElementById("cms_alt").style.display="block";
+        }
+        else
+        {
+            document.getElementById("cms_alt").innerHTML="nome o password sbagliato";
+            document.getElementById("cms_alt").style.display="block";
+        }
+       
+    }
+}

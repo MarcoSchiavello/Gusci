@@ -229,8 +229,6 @@ textarea
 	border-radius: 100px;
 	border-style: none;
 	border: solid black 3px;
-
-
 }
 .dati:focus
 {
@@ -457,6 +455,64 @@ textarea
 .prezzo::placeholder
 {
 	font-size: 15px;
+}
+.img_logo_cms
+{
+	height: 75px;
+	width: 190px;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+.login_cms
+{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 1200;
+	left: 0;
+	top: 0;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+}
+.login_cms_form
+{
+	z-index: 1201;
+	box-shadow :0px 5px 12px -5px  black;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 450px;
+	padding: 50px 15px 50px 15px;
+	
+}
+.dati_cms
+{
+	width: 200px;
+	padding: 10px;
+	border-radius: 100px;
+	border-style: none;
+	border: solid black 3px;
+	margin: auto;
+}
+.dati_cms:focus
+{
+	transition: 0.5s;
+	width: 250px;
+}
+.space
+{
+	margin-bottom: 30px;
+}
+.allert_cms
+{
+	position: relative;
+	height: 0;
+	color: red;
+	margin: auto;
 }
 /*--------MEDIA----------*/                                            
 @media only screen and (max-width: 1560px)

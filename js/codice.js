@@ -107,11 +107,6 @@ $(function ()
         document.getElementById("sign_up").style.display="none";
 
     }
-    document.getElementById("fake_file").onclick=function()
-    {
-        document.getElementById("file").click();
-    }
-
     
 }
 )
