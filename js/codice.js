@@ -18,8 +18,8 @@ $(function ()
     $("#nome").focus(reset_nom);
     $("#titolo").blur(primLetCms);
     $("#descrizione").blur(primLetCmsDesc);
-    $("#titolo").focus(reset_cms_alt);
-    $("#descrizione").focus(reset_cms_alt);
+    $("#nome_cms").focus(reset_cms_alt);
+    $("#pass_cms").focus(reset_cms_alt);
 
     btn.onclick=function()
     {
