@@ -210,9 +210,13 @@ function primLetCmsDesc()
 }
 function crea_contr()
 {
-    if(document.getElementById("titolo").length<=0 || document.getElementById("descrizione").length<=0 || document.getElementById("prezzo").length<=0 )
+    if(document.getElementById("titolo").value.length<=0 || document.getElementById("descrizione").value.length<=0 || document.getElementById("prezzo").value.length<=0|| document.getElementById("file").value.length<=0)
     {
         document.getElementById("cms_alt_con").style.display="block";
+    }
+    else
+    {
+        document.getElementById("cms_alt_con").style.display="none";
     }
     
 }
