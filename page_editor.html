@@ -39,7 +39,7 @@
                 <li><a href="index.html" style="text-decoration:none;"><h2 class="voci">pag iniziale</h2></a></li>
                 <li><a href="index.html" style="text-decoration:none;"><h2 class="voci">sconti</h2></a></li>
                 <li><a href="info.html" style="text-decoration:none;" ><h2 class="voci">info</h2></a> </li>
-                <li><a href="index.html" style="text-decoration:none;"><h2 class="voci_hide" id="hide2">logout</h2></a></li>
+                
     
             </ul>
         
@@ -66,29 +66,32 @@
             <div style="display: flex;
                         flex-direction: column;
                         margin-left: 50px;">
-                <input type="text" class="dati_prodotto" placeholder="titolo" style="font-size: 25px;">
-                <textarea class="dati_prodotto" placeholder="desscrizione" style="height: 150px; resize: none;"></textarea>
+                <input type="text" class="dati_prodotto" id="titolo" placeholder="titolo" style="font-size: 25px;">
+                <textarea class="dati_prodotto" id="descrizione" placeholder="desscrizione" style="height: 150px; resize: none;"></textarea>
                 <div style="display: flex;"> 
-                    <input type="number" class="dati_prodotto prezzo" placeholder="prezzo" style="margin-bottom: 0;
-                                                                                                  width: 60px;
-                                                                                                font-size: 20px;"> <h2 style="font-size: 27px;
-                                                                                                                              margin-top: 3px;
-                                                                                                                              margin-left: 10px;">
-                                                                                                                        &#x20ac
-                                                                                                                    </h2>
-                </div>
+                    <input type="number" class="dati_prodotto prezzo" id="prezzo" placeholder="prezzo" style="margin-bottom: 0;
+                                                                                                                width: 60px;
+                                                                                                                font-size: 20px;"> <h2 style="font-size: 27px;
+                                                                                                                                            margin-top: 3px;
+                                                                                                                                            margin-left: 10px;">
+                                                                                                                                        &#x20ac
+                                                                                                                                    </h2>
+                                </div>
             </div>
         </div>
-        <button class="bottoni" style="margin: auto;margin-top: 6%;">
+        <button class="bottoni" onclick="" style="margin: auto;
+                                                  margin-top: 6%;">
             <h2>
                 Crea
             </h2>
+            <h6 class="hide" id="cms_alt_con">completa tutti i campi</h6>
         </button>
     </div>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/libreria.js"></script>
     <script type="text/javascript" src="js/codice.js"></script>
     <script>
+       
         document.getElementById("fake_file").onclick=function()
         {
             document.getElementById("file").click();
@@ -98,6 +101,8 @@
             document.getElementById("sele").style.display="none";
             pre_img(this); 
         });
+
+
     </script>
  
 </body>

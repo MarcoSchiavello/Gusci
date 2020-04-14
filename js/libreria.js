@@ -194,3 +194,29 @@ function contr_cms()
        
     }
 }
+function primLetCms()
+{
+    let titolo=String($("#titolo").val());
+    var restoFras=titolo.substring(1);
+    var pirmaLet=titolo[0].toUpperCase();
+    $("#titolo").val(pirmaLet+restoFras);
+}
+function primLetCmsDesc()
+{
+    let descrizione=String($("#descrizione").val());
+    var restoFrasDescr=descrizione.substring(1);
+    var pirmaLetDescr=descrizione[0].toUpperCase();
+    $("#descrizione").val(pirmaLetDescr+restoFrasDescr);
+}
+function crea_contr()
+{
+    if(document.getElementById("titolo").length<=0 || document.getElementById("descrizione").length<=0 || document.getElementById("prezzo").length<=0 )
+    {
+        document.getElementById("cms_alt_con").style.display="block";
+    }
+    
+}
+function reset_cms_alt()
+{
+    document.getElementById("cms_alt").style.display="none";
+}
