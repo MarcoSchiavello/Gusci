@@ -229,6 +229,7 @@ textarea
 	border-radius: 100px;
 	border-style: none;
 	border: solid black 3px;
+	width: 170px;
 }
 .dati:focus
 {
@@ -245,12 +246,7 @@ textarea
 
 	display: none;
 }   
-.input
-{
-	height: 70px;
-	width: 300px;
-
-}                                    
+                                   
 /*-------ALLERT-----------*/
 .avviso1
 {

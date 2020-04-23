@@ -3,7 +3,7 @@ function writeln(frase)
     document.write(frase+"<br>");
 }
 
-function morina(a,b,c)
+function parabole(a,b,c)
 {
     var delta=b*b-4*(a*c);
     var x1=(b*-1)- Math.sqrt(delta)/2*a;
@@ -112,27 +112,62 @@ function servizio()
 }
 function contr_lung_sign()
 {
-    let nome=$("#sign_nome").val();
-    let cognome=$("#sign_cognome").val();
-
+    let nome= document.getElementById("sign_nome").value;
+    let cognome= document.getElementById("sign_cognome").value;
+    
     if(nome.length>10)
     {
-        allert.innerHTML="troppo lungha";
-        allert.style.display="block";
+        document.getElementById("allert_sign_up").innerHTML="troppo lungha";
+        document.getElementById("allert_sign_up").style.display="block";
     }
     else
     {
-        allert.style.display="none";
+        document.getElementById("allert_sign_up").style.display="none";
     }
     if(cognome.length>10)
     {
-        allert.innerHTML="troppo lungha";
-        allert2.style.display="block";
+        document.getElementById("allert_sign_up2").innerHTML="troppo lungha";
+        document.getElementById("allert_sign_up2").style.display="block";
     }
     else
     {
-        allert2.style.display="none";
+        document.getElementById("allert_sign_up2").style.display="none";
     }
+    
+}
+function contr_mail()
+{
+    let mail=document.getElementById("mail").value;
+    if(!(mail.length <= 0))
+    {
+        if(mail.indexOf("@") <= -1)
+        {
+            document.getElementById("allert_sign_up3").innerHTML="non e una mail";
+            document.getElementById("allert_sign_up3").style.display="block";
+        }
+        else
+        {
+            document.getElementById("allert_sign_up3").style.display="none";
+        }
+    }
+   
+}
+function contr_pass()
+{
+    let pass=document.getElementById("pass").value;
+    if(!(pass.length <= 0))
+    {
+        if(pass.length <  5)
+        {
+            document.getElementById("allert_sign_up4").innerHTML="troppo corta";
+            document.getElementById("allert_sign_up4").style.display="block";
+        }
+        else
+        {
+            document.getElementById("allert_sign_up4").style.display="none";
+        }
+    }
+   
 }
 function salutaNuovoUtente(sign_nome,sign_cognome)
 {
@@ -147,12 +182,80 @@ function salutaNuovoUtente(sign_nome,sign_cognome)
 }
 function after_sign_up(sign_nome,sign_cognome)
 {
-    salutaNuovoUtente(sign_nome,sign_cognome);
-    document.getElementById("carrello").style.right="30px";
-    hide.style.position="absolute";
-    hide.style.right="60px";
-    hide.style.top="10px";
-    carrello.style.display="block";
+    let nome= document.getElementById("sign_nome").value;
+    let cognome= document.getElementById("sign_cognome").value;
+    let mail=document.getElementById("mail").value;
+    let pass=document.getElementById("pass").value;
+    if(cognome.length<=0 || nome.length<=0 || nome.length>10 || cognome.length>10 || pass.length <  5 || mail.indexOf("@") <= -1 )
+    {
+        //questa condizione fa schifo però non so come migliorarla
+
+        if(nome.length<=0)
+        {
+            document.getElementById("allert_sign_up").innerHTML="immettere nome";
+            document.getElementById("allert_sign_up").style.display="block"; 
+        }
+        else
+        {
+            document.getElementById("allert_sign_up").style.display="none";  
+        }
+        if(cognome.length<=0)
+        {
+            document.getElementById("allert_sign_up2").innerHTML="immettere cognome";
+            document.getElementById("allert_sign_up2").style.display="block"; 
+        }
+        else
+        {
+            document.getElementById("allert_sign_up2").style.display="none";  
+        }
+        if(mail.length<=0)
+        {
+            document.getElementById("allert_sign_up3").innerHTML="immettere mail";
+            document.getElementById("allert_sign_up3").style.display="block"; 
+        }
+        else
+        {
+            document.getElementById("allert_sign_up3").style.display="none";  
+        }
+        if(pass.length<=0)
+        {
+            document.getElementById("allert_sign_up4").innerHTML="immettere pass";
+            document.getElementById("allert_sign_up4").style.display="block"; 
+        }
+        else
+        {
+            document.getElementById("allert_sign_up4").style.display="none";  
+        }
+        if(nome.length>10)
+        {
+            document.getElementById("allert_sign_up").innerHTML="troppo lungha";
+            document.getElementById("allert_sign_up").style.display="block";
+        }
+        if(cognome.length>10)
+        {
+            document.getElementById("allert_sign_up2").innerHTML="troppo lungha";
+            document.getElementById("allert_sign_up2").style.display="block";
+        }
+        if(pass.length <  5 && pass.length > 0 )
+        {
+            document.getElementById("allert_sign_up4").innerHTML="troppo corta";
+            document.getElementById("allert_sign_up4").style.display="block";
+        }
+        if(mail.indexOf("@") <= -1 && pass.length > 0)
+        {
+            document.getElementById("allert_sign_up3").innerHTML="non e una mail";
+            document.getElementById("allert_sign_up3").style.display="block";
+        }
+    }
+    else
+    {
+        salutaNuovoUtente(sign_nome,sign_cognome);
+        document.getElementById("carrello").style.right="30px";
+        hide.style.position="absolute";
+        hide.style.right="60px";
+        hide.style.top="10px";
+        carrello.style.display="block";
+    }
 }
 function pre_img(input) 
 {
@@ -170,6 +273,7 @@ function pre_img(input)
         
         reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
+  
 }
 function contr_cms()
 {
@@ -223,4 +327,27 @@ function crea_contr()
 function reset_cms_alt()
 {
     document.getElementById("cms_alt").style.display="none";
+}
+function reset_nome_sign_up()
+{
+    document.getElementById("allert_sign_up").style.display="none";
+}
+function reset_cognome_sign_up()
+{
+    document.getElementById("allert_sign_up2").style.display="none";
+}
+function reset_mail()
+{
+    document.getElementById("allert_sign_up3").style.display="none";
+}
+function reset_pass()
+{
+    document.getElementById("allert_sign_up4").style.display="none";
+}
+function switch_modal()
+{
+    document.getElementById("con_sign_up").style.display="none"; 
+    document.getElementById("con_login").style.display="block";
+    document.getElementById("sign_up").style.display="block";
+
 }
