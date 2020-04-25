@@ -92,6 +92,7 @@ textarea
 	text-decoration:none;
 	padding: 13px;
 	border-radius: 15px;
+	transition: 0.6s;
 }
 .voci:hover
 {
@@ -157,15 +158,17 @@ textarea
 	background-image: url("https://i.pinimg.com/originals/c6/22/46/c62246425d2c45d07ff2ad24ecd620cc.jpg");
 	background-size: cover;
 	background-position: center center;
+	
 
 }
 .cover-opacita
 {
 	color: black;
 	position: absolute;
+	background-color: rgba(0,0,0,0.4);
 	width: 100%;
 	height: 100%;
-	z-index: 0;
+	
 }
 .cover2
 {
@@ -173,7 +176,7 @@ textarea
 	position: relative;
 	height: 100%;
 	width: 100%;
-	z-index: 1;
+	
 }
 .cover_text
 {
@@ -181,6 +184,8 @@ textarea
 	vertical-align: middle;
 	text-align: center;
 	color: white;
+	
+	opacity:1;
 }
 /*-------MODAL-----------*/
 .modal
@@ -230,6 +235,7 @@ textarea
 	border-style: none;
 	border: solid black 3px;
 	width: 170px;
+	transition: 0.6s;
 }
 .dati:focus
 {
@@ -283,6 +289,7 @@ textarea
 	border: solid 2px;
 	border-color:blue;
 	border-radius: 12px;
+	transition: 0.6s;
 }
 .bottoni:hover
 {
@@ -328,6 +335,7 @@ textarea
 	height: 360px;
 	width: 230px;
 	float: left;
+	transition: 0.4s;
 }
 .banner:hover
 {
@@ -371,6 +379,7 @@ textarea
 	border-radius: 50px;
 	padding-left: 15px;
 	padding-right: 15px;
+	transition: 0.6s;
 }
 .lente:focus
 {
