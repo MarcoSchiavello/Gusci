@@ -502,6 +502,7 @@ textarea
 	border-style: none;
 	border: solid black 3px;
 	margin: auto;
+	transition: 0.5s;
 }
 .dati_cms:focus
 {
