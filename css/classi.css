@@ -6,6 +6,9 @@ p
 	font-family: Circularstd, sans-serif;
 
 }
+html::-webkit-scrollbar {
+    width: 0px; /* For Chrome, Safari, and Opera */
+}
 body,html
 {
 	width: 100%;
@@ -66,12 +69,12 @@ textarea
 }
 .nav_page_editor
 {
+	display: flex;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 100%;
 	background-color: white;
 	box-shadow :0px 5px 12px -5px  blue;
-	display: block;
 	z-index: 999;
 	display: inline-block;
 	height: 75px;
@@ -100,13 +103,19 @@ textarea
 	background-color: blue;
 	transition: 0.6s;
 }
-.tre
+.voci2
 {
-	display: none;
-	height: 10px;
-	width: 50px;
+	color: blue;
+	text-decoration:none;
+	padding: 13px;
+	border-radius: 15px;
+	transition: 0.6s;
+}
+.voci2:hover
+{
+	color: white;
 	background-color: blue;
-	margin-bottom: 5px;
+	transition: 0.6s;
 }
 .carrello
 {
@@ -114,8 +123,9 @@ textarea
 	height: 35px;
 	position: absolute;
 	top: 30px;
-	right: 150px;
+	right: 1.5%;
 	display: none;
+	
 } 
 .voci_hide
 {
@@ -123,6 +133,7 @@ textarea
 	text-decoration:none;
 	padding: 13px;
 	border-radius: 15px;
+	transition: 0.6s;
 	display: none;
 }
 .voci_hide:hover
@@ -154,7 +165,7 @@ textarea
 	position: absolute; 
 	top: 94px;
 	width: 100%;
-	height: 30%;
+	height: 287px;
 	background-image: url("https://i.pinimg.com/originals/c6/22/46/c62246425d2c45d07ff2ad24ecd620cc.jpg");
 	background-size: cover;
 	background-position: center center;
@@ -165,7 +176,7 @@ textarea
 {
 	color: black;
 	position: absolute;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.5);
 	width: 100%;
 	height: 100%;
 	
@@ -190,19 +201,18 @@ textarea
 /*-------MODAL-----------*/
 .modal
 {
-	display: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	z-index: 1000;
 	height: 100%;
+	width: 100%;
 	left: 0;
 	top: 0;
-	width: 100%;
 	position: fixed;
-	padding-top: 100px;
-	overflow-y: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-	
-
+	overflow-y: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4); 
 }
 .con_modal
 {
@@ -230,17 +240,43 @@ textarea
 }
 .dati
 {	
-	padding: 10px;
-	border-radius: 100px;
 	border-style: none;
-	border: solid black 3px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 20px;
+	border: 0;
+	border-bottom: 2px solid black;
+	background: transparent;
+	outline: none;
 	width: 170px;
 	transition: 0.6s;
+	z-index: 78;
 }
-.dati:focus
+.label
 {
-	width: 210px;
-	transition: 0.6s;
+	width: fit-content;
+    font-family: Tahoma, Geneva, sans-serif;
+	margin: 0;
+    bottom: 5px;
+	position: absolute;
+	display: block;
+	pointer-events: none;
+    transition: 0.4s;
+    font-size: 20px;
+	color: grey;
+	z-index: 77;
+}
+
+.dati:valid + label,
+.dati:focus + label
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	position: absolute;
+	bottom: 30px;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: black;
+	
 }
 .con_modal_sign_in   
 {
@@ -252,7 +288,10 @@ textarea
 
 	display: none;
 }   
-                                   
+#sub_log_index
+{
+	margin-top: 60px;
+}                                   
 /*-------ALLERT-----------*/
 .avviso1
 {
@@ -271,14 +310,21 @@ textarea
 .allert
 {
 	position: relative;
-	top: -50px;
+	top: -23px;
 	height: 0;
 	float: right;
 	color: red;
 }
+#allert3
+{
+	color: red;
+	position: relative; 
+	top: -130px;
+}
 /*--------BOTTONI----------*/
 .bottoni
 {
+	outline: none;
 	margin: 5px;
 	padding: 12px;
 	background-color: white;
@@ -297,6 +343,28 @@ textarea
 	background-color: blue;	
 	transition: 0.6s;
 }
+.bottoni_fake
+{
+	outline: none;
+	margin-top: 15px;
+	position: relative; 
+	padding: 12px;
+	background-color: white;
+	color: #7272ea;
+	font-size: 17px;
+	font-family: Circularstd, sans-serif;
+	font-style: none;
+	border: solid 2px;
+	border-color: #7272ea;
+	border-radius: 12px;
+	transition: 0.6s;
+}
+.bottoni_fake:hover
+{
+	color: white;
+	background-color: #7272ea;	
+	transition: 0.6s;
+}
 .bottoni_hide:hover
 {
 	color: white;
@@ -306,6 +374,7 @@ textarea
 
 .bottoni_hide
 {
+	outline: none;
 	margin-top: 50px;
 	padding: 12px;
 	background-color: white;
@@ -355,7 +424,7 @@ textarea
 .card
 {
 	position: relative;
-	top: 50%;
+	top: 500px;
 	width: 1450px;
 	margin-left: auto;
 	margin-right: auto;
@@ -370,44 +439,40 @@ textarea
 /*--------LENTE----------*/
 .lente
 {
+	outline: none;
 	height: 30px;
     width: 150px;
     border: solid 2px black;
+    top: 420px;
+    right: 50px;
+    border-radius: 50px;
+    transition: 0.6s;
+    background-color: white;
     position: absolute;
-    top: 43%;
-	right: 50px;
-	border-radius: 50px;
-	padding-left: 15px;
-	padding-right: 15px;
-	transition: 0.6s;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 5px 0px 5px 35px;
 }
 .lente:focus
 {
 	width: 175px;
 	transition: 0.6s;
 }
-.lente::placeholder
-{
-
-}  
-.lente::placeholder::before
-{
-
-}
 /*--------INFO----------*/
 .info
 {
-
-	position: absolute;
-	top: 50%;
-	width: 100%;
-	margin-bottom: 200px;
+	margin: auto;
+	position: relative;
+	top: 450px;
+	width: 80%;
+	margin-bottom: 100px;
 	
 }
 .info_text
 {
 	position: relative;
-	width: 80%;
+	width: 100%;
+	text-align: center;
 	border-bottom: solid 1px black;
 	border-top: solid 1px black;
 	padding-top: 20px;
@@ -416,7 +481,9 @@ textarea
 /*--------PAGE_EDITOR----------*/ 
 .dati_file
 {
+	outline: none;
 	width: 300px;
+	height: 360px;
 	background-color: white;
 	color: rgba(0,0,255,0.5);
 	font-size: 20px;
@@ -426,6 +493,21 @@ textarea
 	border-color: black;
 	border-radius: 12px;
 	
+}
+.banner_manage
+{
+	margin: 15px;
+	display: solid;
+	flex-direction: column;
+	padding: 15px;
+	padding-top: 5px;
+	background-color: white; 
+	box-shadow:0px 5px 12px -5px  black;
+	border-radius: 15px;
+	height: 400px;
+	width: 230px;
+	float: left;
+	transition: 0.4s;
 }
 .titolo_page_creator
 {
@@ -444,6 +526,7 @@ textarea
 }
 .dati_prodotto
 {
+	outline: none;
 	border: solid black 2px;
 	border-radius: 7px;
 	padding: 5px;
@@ -486,7 +569,7 @@ textarea
 .login_cms_form
 {
 	z-index: 1201;
-	box-shadow :0px 5px 12px -5px  black;
+	box-shadow: 5px 5px 12px -1px black;
 	display: flex;
 	flex-direction: column;
 	margin: auto;
@@ -496,6 +579,7 @@ textarea
 }
 .dati_cms
 {
+	outline: none;
 	width: 200px;
 	padding: 10px;
 	border-radius: 100px;
@@ -503,6 +587,12 @@ textarea
 	border: solid black 3px;
 	margin: auto;
 	transition: 0.5s;
+}
+.croce_del
+{
+    width: 40px;
+    border-radius: 11px;
+    position: relative;
 }
 .dati_cms:focus
 {
@@ -520,7 +610,224 @@ textarea
 	color: red;
 	margin: auto;
 }
-/*--------MEDIA----------*/                                            
+.login_cms
+{
+	display: flex;
+    flex-direction: column;
+}
+.croce_del
+{
+	width: 40px;
+	height: 40px;
+	border-radius: 11px;
+	position: relative;
+}
+/*--------TAMEPLATE-----------*/
+#titolo_temp
+{
+	margin-bottom: 15px;
+}
+.container_text_img
+{
+	height: 60%;
+	display: flex;
+	position: absolute;
+	top: 25%;
+	width: 100%;
+}
+.img_tameplate
+{
+	position: relative;
+	height: inherit;
+	display: flex;
+	margin-left: 20px;
+	margin-right: 0;
+	flex-direction: column;
+	justify-content: center;
+}
+.prezzo
+{
+	height: fit-content;
+	position: absolute;
+	top: 30%;
+	right: 7%;
+}
+.testo_tameplate
+{
+	position: relative;
+	width: 37%;
+	height: 100%;
+	left: 11%;
+	justify-content: center;
+	overflow: hidden;
+}
+.prezzo_num
+{
+	width: max-content;
+	top: -60px;    
+	top: 229px;
+	right: 10%;
+	display: flex;
+	justify-content: center;	
+}
+.linea_tameplate
+{
+	display: block;
+}
+.gia_carrello
+{
+	height: fit-content;
+	top: 8px;
+	margin-bottom: 20px; 
+	position: relative;
+}
+.gia_carrello_10
+{
+	height: fit-content; 
+	top: 8px;
+	margin-bottom: 20px; 
+	position: relative; 
+	width:300px; 
+	font-size: 17px;
+}
+.bottone_tameplate_resp
+{
+	margin-top: 15px;
+}
+.quantita_respo
+{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+/*--------CARELLO----------*/ 
+#container_cart
+{
+	position: absolute; 
+	top: 120px; 
+	height: 83%; 
+	width: 100%;
+}
+.nome_prod
+{
+	position: relative;
+	top: 0;
+	left: 0%;
+	width: max-content;
+} 
+.prezzo_prod
+{
+	height: fit-content;
+	position: absolute ;
+	top: 56px;
+	left: 60%;
+}
+.bottom_cart
+{
+	position: relative;
+    height: 60px;
+    width: 80%;
+    margin: auto;
+}
+#prezzo_tot
+{
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: fit-content; 
+	line-height: 60px;
+}
+.but_paga
+{
+	position: absolute; 
+	right: 0; 
+	top: 0; 
+	float: right; 
+	text-decoration: none;
+}
+/*--------RESPONSIVITA----------*/           
+.resp_cart
+{
+	display: flex;
+	flex-direction: column;
+	line-height: 40px;
+	width: 60%;
+	overflow: hidden;
+}
+.DropL
+{
+	position: absolute;
+	padding: 15px;
+	right: 10px;
+	top: 20px;
+	border-radius: 50px;
+    background-color: blue;
+	border: 0;
+	display: none;
+	outline: none;
+	
+}  
+.titNav
+{
+	width: fit-content;
+	margin: auto;
+	position: relative; 
+	top: -10px;
+	display: none;
+	font-size: 50px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+.cont_dropL
+{
+	background-color: blue;
+    display: block;
+    width: 100%;
+    height: 0px;
+	transition: 0.4s;
+	overflow: hidden;
+	background-image: linear-gradient(141deg, #001ffa 0%, #42abc9 55%, #51dbe2 95%);
+	position: relative;
+}
+.lista_cont_dropL
+{
+	width: 100%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    top: 15px;
+    flex-direction: column;
+    margin-top: -15px;
+}
+.voci_cont_dropL
+{
+	border-bottom: solid white;
+    color: white;
+    width: 100%;
+    padding-left: 50px;
+    font-family: Circularstd, sans-serif;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    list-style-type: none;
+}
+.text_voci_cont_dropL
+{
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	transition: 0.3s;
+	width: fit-content;
+}
+.text_voci_cont_dropL:hover
+{
+	transition: 0.3s;
+	color: black;
+}
+                               
 @media only screen and (max-width: 1560px)
 {
 	.card
@@ -528,12 +835,105 @@ textarea
 		display: flex;
 		position: relative;
 		flex-direction: row;
-		top: 50%;
+		top: 500px;
 		width: 1200px;
 		flex-flow: wrap;
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
+@media only screen and (max-width: 1444px)
+{
+	.prezzo_num
+	{
+		position: absolute;
+		width: max-content;
+		top: -60px;    
+		top: 271px;
+		right: 10%;
+		display: flex;
+		justify-content: center;	
+	}
+	.testo_tameplate
+	{
+		position: relative;
+		width: 80%;
+		min-height: 90px;
+		height: 100%;
+		left: 11%;
+		justify-content: center;
+		overflow: hidden;
+		margin-top: 50px;
+	}
+	.bottone_tameplate_resp
+	{
+		position: relative;
+		bottom: 40px;
+	}
+	.quantita_respo
+	{
+		display: flex;
+    	justify-content: center;
+    	position: relative;
+    	top: 100px;
+	}
+	.bottoni_fake
+	{
+		display: block;
+		margin: auto;
+		position: relative;
+		bottom: 40px;
+	}
+	.container_text_img
+	{
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 10%;
+		width: 100%;
+		height: 85%;
+	}
+	.linea_tameplate
+	{
+		display: none;
+	}
+	.gia_carrello
+	{
+		height: fit-content;
+		top: 100px;
+		position: relative;
+		font-size: 17px;
+		margin-bottom: 0;
+	}
+	.gia_carrello_10
+	{
+		height: fit-content;
+		top: 100px;
+		position: relative;
+		font-size: 17px;
+		margin-bottom: 0;
+		width: 80%;
+		margin: auto;
+	}
+
+	.img_tameplate
+	{
+		height: 225px;
+		width: 225px;
+		margin: auto;
+	}
+	.prezzo
+	{
+		height: fit-content;
+		width: fit-content;
+		margin: auto;
+		right: 0;
+		left: 0;
+		position: static;
+		margin-bottom: 70px;
+	}
+
 }
 @media only screen and (max-width: 1400px)
 {
@@ -542,7 +942,7 @@ textarea
 		display: flex;
 		position: relative;
 		flex-direction: row;
-		top: 50%;
+		top: 500px;
 		width: 870px;
 		flex-flow: wrap;
 		margin-left: auto;
@@ -556,22 +956,56 @@ textarea
 		display: flex;
 		position: relative;
 		flex-direction: row;
-		top: 50%;
+		top: 500px;
 		width: 580px;
 		flex-flow: wrap;
 		margin-left: auto;
 		margin-right: auto;
 	}
+
 }
-@media only screen and (max-width: 701px)
+@media only screen and (max-width: 942px)
 {
+	.resp_cart
+	{
+		display: flex;
+		flex-direction: column;
+		line-height: 40px;
+		width: 500px;
+		overflow: hidden;
+	}
+	
+	#sub_log_index
+	{
+		margin-top: 20px;
+	}
+	#btn,#hideCar,#SesD,#hide
+	{
+		display: none;
+	}
+	.lente
+	{
+		margin: auto;
+		position: relative;
+		display: block;
+		right: 0;
+	}
+	.DropL
+	{
+		display: block;
+		cursor: pointer;
+	}
+	.titNav
+	{
+		display: block;
+	}
 	.tre
 	{
 		display: block;
-		height: 10px;
-		width: 50px;
-		background-color: blue;
-		margin-bottom: 5px;
+		height: 6px;
+		width: 30px;
+		background-color: white;
+		margin-bottom: 6px;
 	}
 	.voci
 	{
@@ -581,6 +1015,7 @@ textarea
 		padding: 13px;
 		border-radius: 15px;
 	}
+	
 	.voci_hide
 	{
 		color: blue;
@@ -594,7 +1029,7 @@ textarea
 		display: flex;
 		position: relative;
 		flex-direction: row;
-		top: 50%;
+		top: 500px;
 		width: 580px;
 		flex-flow: wrap;
 		margin-left: auto;
@@ -606,11 +1041,80 @@ textarea
 		margin: auto;
 		padding: 20px;
 		border: 1px solid #888;
-		width: 433px;
-		height: 550px;
+		width: 300px;
+		height: max-content;
+	}
+	.con_modal_sign_in 
+	{
+		background-color: #fefefe;
+		margin: auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 320px;
+		height: 670px;
+		display: none;
+		height: max-content;
+	}
+	#allert3
+	{
+		color: red;
+		position: relative; 
+		top: -110px;
 	}
 	
-	
+}
+@media only screen and (max-width: 700px)
+{
+	#toggle_prez_car
+	{
+		display:none;
+	}
+	.nome_prod
+	{
+		position: relative;
+		top: 0;
+		left: 0%;
+		width: max-content;
+	} 
+	.prezzo_prod
+	{
+		position: relative ;
+		top: 0;
+		left: 0%;
+	}
+	.testo_tameplate
+	{
+		position: relative;
+		width: 80%;
+		min-height: 90px;
+		height: 100%;
+		left: 11%;
+		justify-content: center;
+		overflow: hidden;
+		margin-top: 50px;
+	}
+	#titolo_temp
+	{
+		margin-bottom: 45px;
+	}
+	.prezzo_num
+	{
+		position: absolute;
+		top: 315px;
+		left: 11%;
+		right: 0;
+	}
+}
+@media only screen and (max-width: 644px)
+{
+	.resp_cart
+	{
+		display: flex;
+		flex-direction: column;
+		line-height: 40px;
+		width: 112px;
+		overflow: hidden;
+	}
 }
 @media only screen and (max-width: 607px)
 {
@@ -619,18 +1123,40 @@ textarea
 	    display: flex;
 		position: relative;
 		flex-direction: column;
-		top: 50%;
+		top: 500px;
 		width: 290px;
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.con_modal
+
+}
+@media only screen and (max-width: 555px)
+{
+	.but_paga
 	{
-		background-color: #fefefe;
+		position: relative;
+		height: 50px;
+		width: auto;
+	}
+	#prezzo_tot
+	{
+		position: relative;
 		margin: auto;
-		padding: 20px;
-		border: 1px solid #888;
-		width: 390px;
-		height: 550px;
+	}
+	.bottom_cart
+	{
+		display:flex;
+		flex-direction: column;
+		position: relative;
+		height: 60px;
+		width: 80%;
+		margin: auto;
+	}
+	#container_cart
+	{
+		position: absolute; 
+		top: 120px; 
+		height: 100%; 
+		width: 100%;
 	}
 }
