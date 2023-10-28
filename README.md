@@ -22,6 +22,20 @@ Ether ways you want to put the code in the `htdocs/` directory and run a MySQL s
 
 # Screenshots
 
+<div align="center">
+  
+ **Homepage**
+ 
+ <img src="https://github.com/MarcoSchiavello/Gusci/blob/master/.github/Pasted%20image.png" />
+
+ <br />
+ <br />
+ 
+ **Product page**
+ 
+ <img src="https://github.com/MarcoSchiavello/Gusci/blob/master/.github/Pasted%20image%201.png" />
+
+</div>
 
 
 
